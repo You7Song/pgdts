@@ -1,0 +1,61 @@
+# =============================================================================
+# PGDTS Stage 3 — LoRA Fine-tuning Configuration
+# =============================================================================
+# This YAML file documents the hyperparameters used for Stage 3 training.
+# It can be used as a reference or loaded by custom training scripts.
+#
+#
+# For the canonical training command, see: scripts/train_stage3.sh
+# =============================================================================
+
+# Model
+model: "Qwen/Qwen3-VL-8B-Instruct"
+
+# Tuning
+tuner_type: "lora"
+lora_rank: 24
+lora_alpha: 48
+target_modules:
+  - "q_proj"
+  - "k_proj"
+  - "v_proj"
+  - "o_proj"
+  - "gate_proj"
+  - "up_proj"
+  - "down_proj"
+  - "fc1"
+  - "fc2"
+
+# Data (paths are placeholders — adjust to your local dataset)
+dataset: "./data/train.jsonl"
+val_dataset: "./data/val.jsonl"
+system_prompt: null  # set to a string or a .txt file path
+
+# Training Hyperparameters
+num_train_epochs: 2
+per_device_train_batch_size: 4
+per_device_eval_batch_size: 4
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+lr_scheduler_type: "cosine"
+weight_decay: 0.01
+warmup_ratio: 0.05
+
+# Sequence & Efficiency
+max_length: 2048
+torch_dtype: "bfloat16"
+
+# Checkpointing & Logging
+output_dir: "./checkpoints/stage3_lora"
+save_steps: 100
+eval_steps: 100
+save_total_limit: 3
+logging_steps: 10
+
+# DataLoader
+dataloader_num_workers: 4
+dataset_shuffle: true
+
+# Continuation from Stage 2 (optional)
+# If stage2_adapter path exists, training will warm-start from Stage 2 LoRA.
+stage2_adapter: "./checkpoints/stage2_lora"
