@@ -14,7 +14,7 @@
 
 ## 📌 Overview
 
-PGDTS addresses a critical challenge in **on-device guide-dog assistance** for visually impaired users: mainstream Multimodal Large Language Models (MLLMs) struggle with fine-grained visual perception and structured spatial reasoning, leading to unsafe navigation decisions.
+PGDTS addresses a critical challenge in **intelligent assistive guide-dog navigation** for visually impaired users: mainstream Multimodal Large Language Models (MLLMs) struggle with fine-grained visual perception and structured spatial reasoning, leading to unsafe navigation decisions.
 
 Our solution adopts a **Decoupled Perception-Decision Architecture**:
 - **Front-end**: Specialized vision models (YOLOE, SAM 3, Depth-Pro) extract high-precision structured perception.
@@ -385,7 +385,7 @@ If you find this work useful, please consider citing:
 
 ```bibtex
 @article{pgdts2025,
-  title={Progressive Perception-Guided Decision Training for Guidedog Safety},
+  title={Progressive Perception-Guided Decision Training for Intelligent Assistive Guide-dog Navigation},
   author={Your Name},
   journal={},
   year={2025}
