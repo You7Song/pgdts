@@ -379,21 +379,6 @@ Expected approximate scores on the WalkVLM Reminder Task:
 
 ---
 
-## 📄 Citation
-
-If you find this work useful, please consider citing:
-
-```bibtex
-@article{pgdts2025,
-  title={Progressive Perception-Guided Decision Training for Intelligent Assistive Navigation for the Visually Impaired},
-  author={Your Name},
-  journal={},
-  year={2025}
-}
-```
-
----
-
 ## 📜 License
 
 This project is released under the MIT License. The base model (Qwen3-VL-8B-Instruct) follows its original license (Qwen License).
